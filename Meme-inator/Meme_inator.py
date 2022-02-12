@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
-import random
+import random, os, glob
  
 
 
@@ -18,8 +18,16 @@ for i in range(10):
     d1 = ImageDraw.Draw(img)
  
     # Font selection from the downloaded file
-    myFont = ImageFont.truetype('./FONTS/IMPACT/Impact.ttf', 40)
+    #myFont = ImageFont.truetype('./FONTS/TEST/Kingthings_Trypewriter_2.ttf', 40)
+
+    #files = glob.glob("*.ttf")
+    #print(random.choice(files))
+    #myFont = ImageFont.truetype("./FONTS/IMPACT/"+random.choice(files), 40)
+
+    #print(".\FONTS\IMPACT"+chr(92)+random.choice(os.listdir(".\FONTS\IMPACT")))
+    #myFont = ImageFont.truetype(".\FONTS\TEST"+chr(92)+random.choice(os.listdir(".\FONTS\TEST")), 40)
  
+    
     for h in range(4):
         #Genère un texte aléatoire
         txt = ""
@@ -27,12 +35,14 @@ for i in range(10):
             txt = txt+chr(random.randint(32, 126))
 
         # Decide the text location, color and font
-        d1.text((random.randint(0, width-len(txt*20)), random.randint(0, height-40)), txt, fill =(255, 255, 255),font=myFont)
+        myFont = ImageFont.truetype(".\FONTS\TEST"+chr(92)+random.choice(os.listdir(".\FONTS\TEST")), 40)
+        d1.text((random.randint(0, width-len(txt*20)), random.randint(0, height-40)), txt, fill =(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),font=myFont)
 
     # show and save the image
     # img.show()
     
     img.save("./RESULTS/E_results{}.png".format(i))
+    
     
     
     
