@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c255bcf2-08c9-4672-96af-82cca5d042a9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Meme_inator.py</StartupFile>
+    <StartupFile>Test_interface.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,9 @@
   <ItemGroup>
     <Compile Include="image generator.py" />
     <Compile Include="Meme_inator.py" />
+    <Compile Include="Test_interface.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
