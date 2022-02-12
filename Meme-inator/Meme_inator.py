@@ -14,14 +14,14 @@ for a in range(27):
         #larg = 100
         #height = int(height*larg/width)
         #width = larg
-        #img = img.resize((width, height))
-        img1 = img1.resize((224, 224))
+        height = 224
+        width = 224
+        img = img.resize((width, height))
 
         # On transforme l'image en un format éditable
         d1 = ImageDraw.Draw(img1)
 
-        #img2 = Image.new('RGBA', (width, height), (0, 0, 0, 0))
-        img2 = Image.new('RGBA', (224, 224), (0, 0, 0, 0))
+        img2 = Image.new('RGBA', (width, height), (0, 0, 0, 0))
         d2 = ImageDraw.Draw(img2)
  
         # Font selection from the downloaded file
