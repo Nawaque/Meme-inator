@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c255bcf2-08c9-4672-96af-82cca5d042a9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Test_interface.py</StartupFile>
+    <StartupFile>Meme_inator.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
