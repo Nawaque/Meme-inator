@@ -16,7 +16,7 @@ for a in range(27):
         #width = larg
         height = 224
         width = 224
-        img = img.resize((width, height))
+        img1 = img1.resize((width, height))
 
         # On transforme l'image en un format éditable
         d1 = ImageDraw.Draw(img1)
@@ -51,8 +51,6 @@ for a in range(27):
     
         img1.save("./RESULTS/E_results{}-{}.jpg".format(a, i))
         img2.save("./MASKS/E_results{}-{}.png".format(a, i))
-
-    
     
     
     
