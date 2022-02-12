@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c255bcf2-08c9-4672-96af-82cca5d042a9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Meme_inator.py</StartupFile>
+    <StartupFile>OpenCV.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,9 +23,82 @@
   <ItemGroup>
     <Compile Include="image generator.py" />
     <Compile Include="Meme_inator.py" />
+    <Compile Include="OpenCV.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Test_interface.py">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FONTS\" />
+    <Folder Include="FONTS\IMPACT\" />
+    <Folder Include="FONTS\TEST\" />
+    <Folder Include="MASKs\" />
+    <Folder Include="RESULTS\" />
+    <Folder Include="TEMPLATE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FONTS\IMPACT\impact.ttf" />
+    <Content Include="FONTS\IMPACT\Impacted.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-BlackItalic.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-Bold.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-BoldItalic.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-Italic.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-Light.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-LightItalic.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-Medium.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-MediumItalic.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-Regular.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-Thin.ttf" />
+    <Content Include="FONTS\IMPACT\Roboto-ThinItalic.ttf" />
+    <Content Include="FONTS\IMPACT\RobotoCondensed-Bold.ttf" />
+    <Content Include="FONTS\IMPACT\RobotoCondensed-BoldItalic.ttf" />
+    <Content Include="FONTS\IMPACT\RobotoCondensed-Italic.ttf" />
+    <Content Include="FONTS\IMPACT\RobotoCondensed-Light.ttf" />
+    <Content Include="FONTS\IMPACT\RobotoCondensed-LightItalic.ttf" />
+    <Content Include="FONTS\IMPACT\RobotoCondensed-Regular.ttf" />
+    <Content Include="FONTS\IMPACT\unicode.impact.ttf" />
+    <Content Include="FONTS\TEST\berkshireswash-regular.ttf" />
+    <Content Include="FONTS\TEST\ComicRelief.ttf" />
+    <Content Include="FONTS\TEST\delius-regular.ttf" />
+    <Content Include="FONTS\TEST\impact.ttf" />
+    <Content Include="FONTS\TEST\Kingthings_Trypewriter_2.ttf" />
+    <Content Include="FONTS\TEST\OpenSans-CondBold.ttf" />
+    <Content Include="FONTS\TEST\OpenSans-CondLight.ttf" />
+    <Content Include="FONTS\TEST\playtime.ttf" />
+    <Content Include="FONTS\TEST\PlaytimeOblique.ttf" />
+    <Content Include="FONTS\TEST\Roboto-BlackItalic.ttf" />
+    <Content Include="FONTS\TEST\veteran_typewriter.ttf" />
+    <Content Include="TEMPLATE\bob.png" />
+    <Content Include="TEMPLATE\Grus-Plan.jpg" />
+    <Content Include="TEMPLATE\Tem0.jpg" />
+    <Content Include="TEMPLATE\Tem1.jpg" />
+    <Content Include="TEMPLATE\Tem10.jpg" />
+    <Content Include="TEMPLATE\Tem11.jpg" />
+    <Content Include="TEMPLATE\Tem12.jpg" />
+    <Content Include="TEMPLATE\Tem13.jpg" />
+    <Content Include="TEMPLATE\Tem14.jpg" />
+    <Content Include="TEMPLATE\Tem15.jpg" />
+    <Content Include="TEMPLATE\Tem16.jpg" />
+    <Content Include="TEMPLATE\Tem17.jpg" />
+    <Content Include="TEMPLATE\Tem18.jpg" />
+    <Content Include="TEMPLATE\Tem19.jpg" />
+    <Content Include="TEMPLATE\Tem2.jpg" />
+    <Content Include="TEMPLATE\Tem20.jpg" />
+    <Content Include="TEMPLATE\Tem21.jpg" />
+    <Content Include="TEMPLATE\Tem22.jpg" />
+    <Content Include="TEMPLATE\Tem23.jpg" />
+    <Content Include="TEMPLATE\Tem24.jpg" />
+    <Content Include="TEMPLATE\Tem25.jpg" />
+    <Content Include="TEMPLATE\Tem26.jpg" />
+    <Content Include="TEMPLATE\Tem3.jpg" />
+    <Content Include="TEMPLATE\Tem4.jpg" />
+    <Content Include="TEMPLATE\Tem5.jpg" />
+    <Content Include="TEMPLATE\Tem6.jpg" />
+    <Content Include="TEMPLATE\Tem7.jpg" />
+    <Content Include="TEMPLATE\Tem8.jpg" />
+    <Content Include="TEMPLATE\Tem9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
