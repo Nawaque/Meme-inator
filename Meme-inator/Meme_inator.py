@@ -3,7 +3,7 @@ import random, os
  
 
 for a in range(27):
-    
+    print(a)
     for i in range(20):
 
         #Ouvre le template à utiliser et récupère sa taille
@@ -15,7 +15,7 @@ for a in range(27):
         #height = int(height*larg/width)
         #width = larg
         #img = img.resize((width, height))
-        img = img.resize((224, 224))
+        img1 = img.resize((224, 224))
 
         # On transforme l'image en un format éditable
         d1 = ImageDraw.Draw(img1)
