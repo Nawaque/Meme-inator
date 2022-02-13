@@ -2,7 +2,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QPushButton, QAction, QLineEdit, QMessageBox
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import *
 import os
 from PIL import Image, ImageDraw, ImageFont
 import random
@@ -13,6 +13,8 @@ class Ui_MainWindow(object):
         MainWindow.resize(1600, 900)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        
+        
 
         self.photo = QtWidgets.QLabel(self.centralwidget)
         self.photo.setGeometry(QtCore.QRect(10, 20, 761, 651))
@@ -81,6 +83,13 @@ class Ui_MainWindow(object):
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
+        # Create a button in the window
+        self.fileNameButton = QtWidgets.QPushButton(self.centralwidget)
+        self.fileNameButton.setGeometry(QtCore.QRect(10, 800, 150, 31))
+        font = QtGui.QFont()
+        self.fileNameButton.setFont(font)
+        self.fileNameButton.setObjectName("fileNameButton")
+
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -100,15 +109,6 @@ class Ui_MainWindow(object):
         # self.textbox.setAlignment(Qt.AlignBottom)
         # self.textbox.setFont(QFont("Arial",40))
         
-        # Create a button in the window
-        self.fileNameButton = QtWidgets.QPushButton(self.centralwidget)
-        self.fileNameButton.setGeometry(QtCore.QRect(10, 800, 150, 31))
-        font = QtGui.QFont()
-        font.setPointSize(17)
-        font.setBold(False)
-        font.setWeight(50)
-        self.fileNameButton.setFont(font)
-        self.fileNameButton.setObjectName("fileNameButton")
         # connect button to function on_click
         self.fileNameButton.clicked.connect(self.chooseFileName)
         self.fileNameButton = ''
@@ -121,7 +121,7 @@ class Ui_MainWindow(object):
         self.lancer.setText(_translate("MainWindow", "LANCER"))
         self.resultat.setText(_translate("MainWindow", "OUTPUT"))
         self.chooseDirectory.setText(_translate("MainWindow", "Choose Directory"))
-        #self.fileNameButton.setText(_translate('MainWindow', 'File Name'))
+        self.fileNameButton.setText(_translate('MainWindow', 'File Name'))
 
     def browse_file(self):
         directory = QtWidgets.QFileDialog.getOpenFileName(None, "Browse File", "", "JPEG (*.JPG *.jpg")[0]
@@ -182,6 +182,7 @@ class Ui_MainWindow(object):
         img1.save(self.chooseDirectory + "/" + self.fileName + ".jpg")
         #img2.save("./MASKS/mask{}-{}.png".format(a, i))
         self.resultat.setPixmap(QtGui.QPixmap(os.path.realpath(self.chooseDirectory + "/" + self.fileName + ".jpg" )))
+        #self.resultat.setPixmap(QtGui.QPixmap(os.path.realpath("C:/Users/zevic/Documents/Hackaton/Meme-inator/Meme-inator/TEMPLATE/Tem11.jpg" )))
 
 if __name__ == "__main__":
     import sys
