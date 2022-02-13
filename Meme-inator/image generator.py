@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
         self.photo.setObjectName("photo")
 
         self.browseFile = QtWidgets.QPushButton(self.centralwidget)
-        self.browseFile.setGeometry(QtCore.QRect(350, 700, 151, 31))
+        self.browseFile.setGeometry(QtCore.QRect(10, 700, 150, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.browseFile.setFont(font)
@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
         self.browseFile.clicked.connect(self.browse_file)
 
         self.chooseDirectory = QtWidgets.QPushButton(self.centralwidget)
-        self.chooseDirectory.setGeometry(QtCore.QRect(350, 800, 151, 31))
+        self.chooseDirectory.setGeometry(QtCore.QRect(10, 750, 150, 31))
         font = QtGui.QFont()
         font.setPointSize(17)
         font.setBold(False)
@@ -43,7 +43,7 @@ class Ui_MainWindow(object):
         self.chooseDirectory.setFont(font)
         self.chooseDirectory.setObjectName("saveDirectory")
         self.chooseDirectory.clicked.connect(self.chooseFileDirectory)
-
+        
         self.resultat = QtWidgets.QLabel(self.centralwidget)
         self.resultat.setGeometry(QtCore.QRect(790, 20, 791, 651))
         font = QtGui.QFont()
@@ -56,7 +56,7 @@ class Ui_MainWindow(object):
         self.resultat.setObjectName("resultat")
 
         self.lancer = QtWidgets.QPushButton(self.centralwidget)
-        self.lancer.setGeometry(QtCore.QRect(670, 750, 231, 61))
+        self.lancer.setGeometry(QtCore.QRect(1300, 750, 231, 61))
         font = QtGui.QFont()
         font.setPointSize(17)
         font.setBold(False)
@@ -66,9 +66,14 @@ class Ui_MainWindow(object):
         self.lancer.clicked.connect(self.LancerProg)
 
 
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(520, 700, 521, 31))
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)   #Browse File
+        self.lineEdit.setGeometry(QtCore.QRect(161, 700, 521, 31))
         self.lineEdit.setObjectName("lineEdit")
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.chosenDirectory = QtWidgets.QLineEdit(self.centralwidget)   #Browse File
+        self.chosenDirectory.setGeometry(QtCore.QRect(161, 750, 521, 31))
+        self.chosenDirectory.setObjectName("chosenDirectory")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -90,14 +95,14 @@ class Ui_MainWindow(object):
 
         # Create textbox
         self.textbox = QtWidgets.QLineEdit(self.centralwidget)
-        self.textbox.setGeometry(QtCore.QRect(523, 830, 521, 31))
+        self.textbox.setGeometry(QtCore.QRect(161, 800, 521, 31))
         self.textbox.setObjectName("EnterFileName")
         # self.textbox.setAlignment(Qt.AlignBottom)
         # self.textbox.setFont(QFont("Arial",40))
         
         # Create a button in the window
         self.fileNameButton = QtWidgets.QPushButton(self.centralwidget)
-        self.fileNameButton.setGeometry(QtCore.QRect(421, 830, 100, 30))
+        self.fileNameButton.setGeometry(QtCore.QRect(10, 800, 150, 31))
         font = QtGui.QFont()
         font.setPointSize(17)
         font.setBold(False)
@@ -106,6 +111,7 @@ class Ui_MainWindow(object):
         self.fileNameButton.setObjectName("fileNameButton")
         # connect button to function on_click
         self.fileNameButton.clicked.connect(self.chooseFileName)
+        self.fileNameButton = ''
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -115,6 +121,7 @@ class Ui_MainWindow(object):
         self.lancer.setText(_translate("MainWindow", "LANCER"))
         self.resultat.setText(_translate("MainWindow", "OUTPUT"))
         self.chooseDirectory.setText(_translate("MainWindow", "Choose Directory"))
+        #self.fileNameButton.setText(_translate('MainWindow', 'File Name'))
 
     def browse_file(self):
         directory = QtWidgets.QFileDialog.getOpenFileName(None, "Browse File", "", "JPEG (*.JPG *.jpg")[0]
@@ -126,9 +133,12 @@ class Ui_MainWindow(object):
 
     def chooseFileName(self):
         self.fileName = self.textbox.text()
+        self.textbox.clear()
+
 
     def chooseFileDirectory(self):
         self.chooseDirectory = QtWidgets.QFileDialog.getExistingDirectory()      
+        self.chosenDirectory.setText('{}'.format(self.chooseDirectory))
 
     def _set_text(self, text):
         return text
