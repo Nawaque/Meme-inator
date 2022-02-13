@@ -1,10 +1,11 @@
 from PIL import Image, ImageDraw, ImageFont
 import random, os
+import OpenCV
  
 
-for a in range(2):
+for a in range(39):
     print(a)
-    for i in range(2):
+    for i in range(3):
 
         #Ouvre le template à utiliser et récupère sa taille
         img1 = Image.open('./TEMPLATE/Tem{}.jpg'.format(a))
@@ -21,7 +22,7 @@ for a in range(2):
         # On transforme l'image en un format éditable
         d1 = ImageDraw.Draw(img1)
 
-        img2 = Image.new('RGB', (width, height))
+        img2 = Image.new('1', (width, height))
         d2 = ImageDraw.Draw(img2)
  
         # Font selection from the downloaded file
@@ -44,7 +45,7 @@ for a in range(2):
             x = random.randint(0, width-int(len(txt)*font/2))
             y = random.randint(0, height-font)
             d1.text((x, y), txt, fill =(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),font=myFont)
-            d2.text((x, y), txt, fill =(255, 255, 255),font=myFont)
+            d2.text((x, y), txt, fill =(1),font=myFont)
 
         # show and save the image
         # img.show()
