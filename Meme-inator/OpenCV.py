@@ -3,8 +3,8 @@ import numpy as np
 
 def resolve(image, mask):
 
-    kernel = np.ones((4,4), np.uint8)
-    mask = cv2.dilate(mask, kernel)
+    # kernel = np.ones((1,1), np.uint8)
+    # mask = cv2.dilate(mask, kernel)
 
     image = cv2.inpaint(image, mask, 2, cv2.INPAINT_NS)
 
