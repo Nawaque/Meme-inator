@@ -77,6 +77,13 @@ class App(QWidget):
             img2.save("./MASKS/E_results{}.png".format(i))
             
 
+def mousePressEvent(self, event):
+    if event.button() == Qt.LeftButton & self.globalDrawing==True:
+    self.drawing=True
+    self.lastPoint= event.pos()
+    self.lastPoint=self.imageLabel.mapFromParent(event .pos()) #this is working fine now
+    self.imageLabel.setPixmap(QPixmap.fromImage(self.i mage))
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = App()
